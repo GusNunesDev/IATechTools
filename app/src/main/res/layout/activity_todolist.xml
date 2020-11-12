@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:label="ToDoList"
+    >
+
+    <EditText
+        android:id="@+id/editToDo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:paddingTop="40dp"
+        android:gravity="center_horizontal"
+        android:inputType="text"
+        />
+
+    <Button
+        android:id="@+id/btAdicionarToDo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/btAdicionarToDo"
+        android:backgroundTint="#18FFB5"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/btLimparListaToDo"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:backgroundTint="#F48399"
+        android:text="@string/btLimparListaToDo"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/layoutInterno"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <ListView
+            android:id="@+id/listaToDo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </LinearLayout>
+</LinearLayout>

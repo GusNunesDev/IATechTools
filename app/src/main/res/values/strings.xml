@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">IATechTools</string>
+
+    <string name="btNotepad">Bloco de Notas</string>
+    <string name="btToDoList">Lista de Afazeres</string>
+    <string name="btCalculadora">Calculadora</string>
+
+    <string name="hintCampoTodo">Insira um ToDo</string>
+    <string name="btAdicionarToDo">Adicionar à lista</string>
+    <string name="btLimparListaToDo">Limpar a lista</string>
+</resources>
