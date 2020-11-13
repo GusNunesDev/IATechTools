@@ -42,12 +42,12 @@
 
 # Pagina Index do site para promoção do App IATechTools
 
-![Index do site](https://github.com/GusNunesDev/IATechTools/blob/main/source/image/index.png)
+![Index do site](https://github.com/GusNunesDev/IATechTools/blob/master/source/image/index.png)
 
 Demonstrativo do site para divulgação do App IATechTools.
 
 # Wireframe do App em desenvolvimento
 
-![Wireframe do aplicativo](https://github.com/GusNunesDev/IATechTools/blob/main/source/image/wireframeapp.png)
+![Wireframe do aplicativo](https://github.com/GusNunesDev/IATechTools/blob/master/source/image/wireframeapp.png)
 
 Demonstrativo do wireframe do aplicativo, foi utilizado o site cacoo.com.
