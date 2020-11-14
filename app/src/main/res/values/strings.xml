@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">IATechTools</string>
+    <string name="app_name_notepad">Notepad</string>
+    <string name="app_name_calculadora">Calculadora</string>
+    <string name="app_name_todolist">ToDoList</string>
 
     <string name="btNotepad">Bloco de Notas</string>
     <string name="btToDoList">Lista de Afazeres</string>
