@@ -11,4 +11,29 @@
     <string name="hintCampoTodo">Insira um ToDo</string>
     <string name="btAdicionarToDo">Adicionar à lista</string>
     <string name="btLimparListaToDo">Limpar a lista</string>
+
+    <string name="btNum1">1</string>
+    <string name="btNum2">2</string>
+    <string name="btNum3">3</string>
+    <string name="btNum4">4</string>
+    <string name="btNum5">5</string>
+    <string name="btNum6">6</string>
+    <string name="btNum7">7</string>
+    <string name="btNum8">8</string>
+    <string name="btNum9">9</string>
+    <string name="btNum0">0</string>
+    <string name="btNum00">00</string>
+    <string name="btSoma">+</string>
+    <string name="btSub">-</string>
+    <string name="btMult">X</string>
+    <string name="btDiv">÷</string>
+    <string name="btIgual">=</string>
+    <string name="btPonto">.</string>
+    <string name="btLimpar">L</string>
+    <string name="btMod">%</string>
+    <string name="btApagar">←</string>
+    <string name="tvResultado">0</string>
+    <string name="edCalculo">0</string>
+
+
 </resources>
