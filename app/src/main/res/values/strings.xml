@@ -32,8 +32,8 @@
     <string name="btLimpar">L</string>
     <string name="btMod">%</string>
     <string name="btApagar">←</string>
-    <string name="tvResultado">0</string>
-    <string name="edCalculo">0</string>
+    <string name="tvResultado"></string>
+    <string name="edCalculo"></string>
 
 
 </resources>

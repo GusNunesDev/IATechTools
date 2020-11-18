@@ -8,8 +8,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class CalculadoraActivity extends AppCompatActivity {
-    Double num1, num2;
+    char opcao;
+    Double aux1, aux2;
     Boolean soma, sub, mult, div, resto, deci;
     Button btNum1, btNum2, btNum3, btNum4, btNum5, btNum6, btNum7, btNum8, btNum9, btNum0,
             btNum00, btApagar, btLimpar, btIgual, btPonto, btSoma, btSub,  btDiv, btMult, btMod;
@@ -46,6 +49,9 @@ public class CalculadoraActivity extends AppCompatActivity {
 
         edCalculo = findViewById(R.id.edCalculo);
         tvResultado = findViewById(R.id.tvResultado);
+
+        ArrayList<Double> num1 = new ArrayList<>();
+        ArrayList<Double> num2 = new ArrayList<>();
 
         btNum1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,10 +141,13 @@ public class CalculadoraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (edCalculo.getText().length() != 0) {
-                    num1 = Double.parseDouble(edCalculo.getText() + "");
+                    num1.add(Double.parseDouble(edCalculo.getText() + ""));
                     soma = true;
                     deci = false;
-                    edCalculo.setText(null);
+                    aux1 = 0.0;
+
+                    for(int i = 0; i < num1.size(); i++)
+                        aux1 += num1.get(i);
                 }
             }
         });
@@ -147,10 +156,12 @@ public class CalculadoraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (edCalculo.getText().length() != 0) {
-                    num1 = Double.parseDouble(edCalculo.getText() + "");
+                    num1.add(Double.parseDouble(edCalculo.getText() + ""));
                     mult = true;
                     deci = false;
-                    edCalculo.setText(null);
+
+                    for(int i = 0; i < num1.size(); i++)
+                        aux1 += num1.get(i);
                 }
             }
         });
@@ -159,10 +170,12 @@ public class CalculadoraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (edCalculo.getText().length() != 0) {
-                    num1 = Double.parseDouble(edCalculo.getText() + "");
+                    num1.add(Double.parseDouble(edCalculo.getText() + ""));
                     div = true;
                     deci = false;
-                    edCalculo.setText(null);
+
+                    for(int i = 0; i < num1.size(); i++)
+                        aux1 += num1.get(i);
                 }
             }
         });
@@ -171,10 +184,12 @@ public class CalculadoraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (edCalculo.getText().length() != 0) {
-                    num1 = Double.parseDouble(edCalculo.getText() + "");
+                    num1.add(Double.parseDouble(edCalculo.getText() + ""));
                     resto = true;
                     deci = false;
-                    edCalculo.setText(null);
+
+                    for(int i = 0; i < num1.size(); i++)
+                        aux1 += num1.get(i);
                 }
             }
         });
@@ -182,35 +197,52 @@ public class CalculadoraActivity extends AppCompatActivity {
         btIgual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (soma || sub || mult || div || resto) {
-                    num2 = Double.parseDouble(edCalculo.getText() + "");
+                if(soma == true){
+                    opcao = '+';
+                }else if(sub == true){
+                    opcao = '-';
+                }else if(mult == true){
+                    opcao = 'x';
+                }else if(div == true){
+                    opcao = '/';
+                }else if(resto == true){
+                    opcao = '%';
                 }
 
-                if (soma) {
+                switch(opcao){
+                    case '+':
+                        tvResultado.setText(aux1 + aux2 + "");
+                        soma = false;
 
-                    edCalculo.setText(num1 + num2 + "");
-                    soma = false;
                 }
-
-                if (sub) {
-
-                    edCalculo.setText(num1 - num2 + "");
-                    sub = false;
-                }
-
-                if (mult) {
-                    edCalculo.setText(num1 * num2 + "");
-                    mult = false;
-                }
-
-                if (div) {
-                    edCalculo.setText(num1 / num2 + "");
-                    div = false;
-                }
-                if (resto) {
-                    edCalculo.setText(num1 % num2 + "");
-                    resto = false;
-                }
+//                if (soma || sub || mult || div || resto) {
+//                    num2.add(Double.parseDouble(edCalculo.getText() + ""));
+//                }
+//
+//                if (soma) {
+//                    tvResultado.setText(aux1 + aux2 + "");
+//                    soma = false;
+//                }
+//
+//                if (sub) {
+//                    tvResultado.setText(aux1 - aux2 + "");
+//                    sub = false;
+//                }
+//
+//                if (mult) {
+//                    tvResultado.setText(aux1 * aux2 + "");
+//                    mult = false;
+//                }
+//
+//                if (div) {
+//                    tvResultado.setText(aux1 / aux2 + "");
+//                    div = false;
+//                }
+//
+//                if (resto) {
+//                    tvResultado.setText(aux1 % aux2 + "");
+//                    resto = false;
+//                }
             }
         });
 
@@ -218,8 +250,9 @@ public class CalculadoraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 edCalculo.setText("");
-                num1 = 0.0;
-                num2 = 0.0;
+                tvResultado.setText("");
+                num1.clear();
+                num2.clear();
             }
         });
 
@@ -227,7 +260,7 @@ public class CalculadoraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 StringBuilder apagador = new StringBuilder();
-                apagador.deleteCharAt(edCalculo.getText().length() - 1);
+                apagador.deleteCharAt(edCalculo.length() - 1);
             }
         });
 
