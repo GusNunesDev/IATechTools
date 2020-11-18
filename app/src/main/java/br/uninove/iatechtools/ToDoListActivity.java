@@ -39,7 +39,6 @@ public class ToDoListActivity extends AppCompatActivity implements View.OnClickL
         btAdicionarToDo.setOnClickListener(this);
         btLimpaListaToDo.setOnClickListener(this);
 
-        //Faltam os listeners de click da listview
     }
 
     @Override
@@ -62,7 +61,7 @@ public class ToDoListActivity extends AppCompatActivity implements View.OnClickL
             lista.clear();
             adaptador.notifyDataSetChanged();
             editToDo.setText("");
-            editToDo.requestFocus(); //enviar o FOCO para o campo de digitação
+            editToDo.requestFocus();
         }
     }
 }

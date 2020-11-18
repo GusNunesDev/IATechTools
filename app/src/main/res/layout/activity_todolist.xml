@@ -22,12 +22,11 @@
         android:id="@+id/btAdicionarToDo"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="@string/btAdicionarToDo"
         android:backgroundTint="#18FFB5"
-        android:textColor="#000000"
-        android:textSize="24sp"
+        android:text="@string/btAdicionarToDo"
         android:textAllCaps="false"
-        />
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btLimparListaToDo"

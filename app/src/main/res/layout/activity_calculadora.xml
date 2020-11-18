@@ -46,7 +46,7 @@
         android:id="@+id/tvResultado"
         android:layout_width="76dp"
         android:layout_height="33dp"
-        android:gravity="right"
+        android:gravity="end"
         android:text="@string/tvResultado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +68,7 @@
         app:layout_constraintVertical_bias="0.512" />
 
     <Button
-        android:id="@+id/btNumSub"
+        android:id="@+id/btSub"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:text="@string/btSub"
@@ -84,7 +84,7 @@
         android:layout_width="231dp"
         android:layout_height="52dp"
         android:ems="10"
-        android:gravity="right"
+        android:gravity="end"
         android:inputType="textPersonName"
         android:text="@string/edCalculo"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -252,7 +252,7 @@
         app:layout_constraintVertical_bias="0.425" />
 
     <Button
-        android:id="@+id/btNumApagar"
+        android:id="@+id/btApagar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:text="@string/btApagar"
@@ -264,7 +264,7 @@
         app:layout_constraintVertical_bias="0.425" />
 
     <Button
-        android:id="@+id/btClear"
+        android:id="@+id/btLimpar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:text="@string/btLimpar"
