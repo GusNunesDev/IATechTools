@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class CalculadoraActivity extends AppCompatActivity {
     char opcao;
     Double aux1, aux2;
-    Boolean soma, sub, mult, div, resto, deci;
+    Boolean soma = false, sub = false, mult = false, div = false, resto = false;
     Button btNum1, btNum2, btNum3, btNum4, btNum5, btNum6, btNum7, btNum8, btNum9, btNum0,
             btNum00, btApagar, btLimpar, btIgual, btPonto, btSoma, btSub,  btDiv, btMult, btMod;
     EditText edCalculo;
@@ -95,13 +95,6 @@ public class CalculadoraActivity extends AppCompatActivity {
             }
         });
 
-        btNum1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                edCalculo.setText(edCalculo.getText() + "1");
-            }
-        });
-
         btNum7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -143,11 +136,28 @@ public class CalculadoraActivity extends AppCompatActivity {
                 if (edCalculo.getText().length() != 0) {
                     num1.add(Double.parseDouble(edCalculo.getText() + ""));
                     soma = true;
-                    deci = false;
-                    aux1 = 0.0;
+                    opcao = '+';
+
+                    for (int i = 0; i < num1.size(); i++)
+                        aux1 += num1.get(i); //Log de erro num1 retorna null
+
+                    edCalculo.getText().clear();
+                }
+            }
+        });
+
+        btSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (edCalculo.getText().length() != 0) {
+                    num1.add(Double.parseDouble(edCalculo.getText() + ""));
+                    sub = true;
+                    opcao = '-';
 
                     for(int i = 0; i < num1.size(); i++)
                         aux1 += num1.get(i);
+
+                    edCalculo.getText().clear();
                 }
             }
         });
@@ -158,10 +168,11 @@ public class CalculadoraActivity extends AppCompatActivity {
                 if (edCalculo.getText().length() != 0) {
                     num1.add(Double.parseDouble(edCalculo.getText() + ""));
                     mult = true;
-                    deci = false;
+                    opcao = 'x';
 
                     for(int i = 0; i < num1.size(); i++)
                         aux1 += num1.get(i);
+
                 }
             }
         });
@@ -172,10 +183,11 @@ public class CalculadoraActivity extends AppCompatActivity {
                 if (edCalculo.getText().length() != 0) {
                     num1.add(Double.parseDouble(edCalculo.getText() + ""));
                     div = true;
-                    deci = false;
+                    opcao = '/';
 
                     for(int i = 0; i < num1.size(); i++)
                         aux1 += num1.get(i);
+
                 }
             }
         });
@@ -186,10 +198,11 @@ public class CalculadoraActivity extends AppCompatActivity {
                 if (edCalculo.getText().length() != 0) {
                     num1.add(Double.parseDouble(edCalculo.getText() + ""));
                     resto = true;
-                    deci = false;
+                    opcao = '%';
 
                     for(int i = 0; i < num1.size(); i++)
                         aux1 += num1.get(i);
+
                 }
             }
         });
@@ -197,22 +210,58 @@ public class CalculadoraActivity extends AppCompatActivity {
         btIgual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(soma == true){
-                    opcao = '+';
-                }else if(sub == true){
-                    opcao = '-';
-                }else if(mult == true){
-                    opcao = 'x';
-                }else if(div == true){
-                    opcao = '/';
-                }else if(resto == true){
-                    opcao = '%';
-                }
 
                 switch(opcao){
                     case '+':
+                        if (edCalculo.getText().length() != 0) {
+                            num2.add(Double.parseDouble(edCalculo.getText() + ""));
+
+                            for (int i = 0; i < num2.size(); i++)
+                                aux2 += num2.get(i);
+                        }
                         tvResultado.setText(aux1 + aux2 + "");
+                        //System.out.printf("aux1: %.2f\naux2: %.2f\nnum1: %.2f\nnum2: %.2f", aux1, aux2, num1, num2);
                         soma = false;
+
+                    case '-':
+                        if (edCalculo.getText().length() != 0) {
+                            num2.add(Double.parseDouble(edCalculo.getText() + ""));
+
+                            for (int i = 0; i < num2.size(); i++)
+                                aux2 += num2.get(i);
+                        }
+                        tvResultado.setText(aux1 - aux2 + "");
+                        sub = false;
+
+                    case 'x':
+                        if (edCalculo.getText().length() != 0) {
+                            num2.add(Double.parseDouble(edCalculo.getText() + ""));
+
+                            for (int i = 0; i < num2.size(); i++)
+                                aux2 += num2.get(i);
+                        }
+                        tvResultado.setText(aux1 * aux2 + "");
+                        mult = false;
+
+                    case '/':
+                        if (edCalculo.getText().length() != 0) {
+                            num2.add(Double.parseDouble(edCalculo.getText() + ""));
+
+                            for (int i = 0; i < num2.size(); i++)
+                                aux2 += num2.get(i);
+                        }
+                        tvResultado.setText(aux1 + aux2 + "");
+                        div = false;
+
+                    case '%':
+                        if (edCalculo.getText().length() != 0) {
+                            num2.add(Double.parseDouble(edCalculo.getText() + ""));
+
+                            for (int i = 0; i < num2.size(); i++)
+                                aux2 += num2.get(i);
+                        }
+                        tvResultado.setText(aux1 + aux2 + "");
+                        resto = false;
 
                 }
 //                if (soma || sub || mult || div || resto) {
@@ -251,6 +300,8 @@ public class CalculadoraActivity extends AppCompatActivity {
             public void onClick(View v) {
                 edCalculo.setText("");
                 tvResultado.setText("");
+                aux1 = 0.0;
+                aux2 = 0.0;
                 num1.clear();
                 num2.clear();
             }
@@ -260,20 +311,20 @@ public class CalculadoraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 StringBuilder apagador = new StringBuilder();
-                apagador.deleteCharAt(edCalculo.length() - 1);
+                apagador.deleteCharAt(edCalculo.getText().length() - 1);
             }
         });
 
-        btPonto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (deci) {
-
-                } else {
-                    edCalculo.setText(edCalculo.getText() + ".");
-                    deci = true;
-                }
-            }
-        });
+//        btPonto.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (deci) {
+//
+//                } else {
+//                    edCalculo.setText(edCalculo.getText() + ".");
+//                    deci = true;
+//                }
+//            }
+//        });
     }
 }
