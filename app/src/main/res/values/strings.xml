@@ -8,6 +8,13 @@
     <string name="btToDoList">Lista de Afazeres</string>
     <string name="btCalculadora">Calculadora</string>
 
+    <string name="adicionarNota">Adicionar Nota</string>
+    <string name="tituloNota">Título</string>
+    <string name="textoNota">Descrição</string>
+    <string name="btSalvarNota">Salvar</string>
+    <string name="data">Data criação: </string>
+    <string name="excluir">Excluir essa nota?</string>
+
     <string name="hintCampoTodo">Insira um ToDo</string>
     <string name="btAdicionarToDo">Adicionar à lista</string>
     <string name="btLimparListaToDo">Limpar a lista</string>
@@ -34,6 +41,4 @@
     <string name="btApagar">←</string>
     <string name="tvResultado"></string>
     <string name="edCalculo"></string>
-
-
 </resources>

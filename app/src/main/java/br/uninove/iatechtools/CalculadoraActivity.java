@@ -14,8 +14,8 @@ import java.util.List;
 
 public class CalculadoraActivity extends AppCompatActivity {
     char opcao;
-    Double num1, num2;
-    Boolean soma, sub, mult, div, resto;
+    String edCalc;
+    Double num1, num2, res;
     Button btNum1, btNum2, btNum3, btNum4, btNum5, btNum6, btNum7, btNum8, btNum9, btNum0,
             btNum00, btApagar, btLimpar, btIgual, btPonto, btSoma, btSub,  btDiv, btMult, btMod;
     EditText edCalculo;
@@ -129,12 +129,12 @@ public class CalculadoraActivity extends AppCompatActivity {
             }
         });
 
+        //todo Criar array para armazenar os valores num1 e num2
         btSoma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (edCalculo.getText().length() != 0) {
                     num1 = (Double.parseDouble(edCalculo.getText() + ""));
-                    soma = true;
                     opcao = '+';
                     edCalculo.setText(null);
                 }
@@ -145,8 +145,7 @@ public class CalculadoraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (edCalculo.getText().length() != 0) {
-                    num1 += (Double.parseDouble(edCalculo.getText() + ""));
-                    sub = true;
+                    num1 = (Double.parseDouble(edCalculo.getText() + ""));
                     opcao = '-';
                     edCalculo.setText(null);
                 }
@@ -157,8 +156,7 @@ public class CalculadoraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (edCalculo.getText().length() != 0) {
-                    num1 += (Double.parseDouble(edCalculo.getText() + ""));
-                    mult = true;
+                    num1 = (Double.parseDouble(edCalculo.getText() + ""));
                     opcao = 'x';
                     edCalculo.setText(null);
                 }
@@ -169,8 +167,7 @@ public class CalculadoraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (edCalculo.getText().length() != 0) {
-                    num1 += (Double.parseDouble(edCalculo.getText() + ""));
-                    div = true;
+                    num1 = (Double.parseDouble(edCalculo.getText() + ""));
                     opcao = '/';
                     edCalculo.setText(null);
                 }
@@ -181,8 +178,7 @@ public class CalculadoraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (edCalculo.getText().length() != 0) {
-                    num1 += (Double.parseDouble(edCalculo.getText() + ""));
-                    resto = true;
+                    num1 = (Double.parseDouble(edCalculo.getText() + ""));
                     opcao = '%';
                     edCalculo.setText(null);
                 }
@@ -196,43 +192,47 @@ public class CalculadoraActivity extends AppCompatActivity {
                 switch(opcao){
                     case '+':
                         if (edCalculo.getText().length() != 0) {
-                            if(soma == true) {
                                 num2 = (Double.parseDouble(edCalculo.getText() + ""));
-                                tvResultado.setText(num1 + " + " + num2  + "= " + (num1 + num2));
-                                soma = false;
+                                edCalculo.setText(null);
+                                res = num1 + num2;
+                                tvResultado.setText(num1 + " + " + num2  + " = " + (res));
+                                limparVariaveis();
                                 break;
-                            }
                         }
 
                     case '-':
                         if (edCalculo.getText().length() != 0) {
                             num2 = (Double.parseDouble(edCalculo.getText() + ""));
-                            tvResultado.setText(num1 - num2 + "");
-                            soma = false;
+                            res = num1 - num2;
+                            tvResultado.setText(num1 + " - " + num2  + " = " + (res));
+                            limparVariaveis();
                             break;
                         }
 
                     case 'x':
                         if (edCalculo.getText().length() != 0) {
                             num2 = (Double.parseDouble(edCalculo.getText() + ""));
-                            tvResultado.setText(num1 * num2 + "");
-                            soma = false;
+                            res = num1 * num2;
+                            tvResultado.setText(num1 + " x " + num2  + " = " + (res));
+                            limparVariaveis();
                             break;
                         }
 
                     case '/':
                         if (edCalculo.getText().length() != 0) {
                             num2 = (Double.parseDouble(edCalculo.getText() + ""));
-                            tvResultado.setText(num1 / num2 + "");
-                            soma = false;
+                            res = num1 / num2;
+                            tvResultado.setText(num1 + " ÷ " + num2  + " = " + (res));
+                            limparVariaveis();
                             break;
                         }
 
                     case '%':
                         if (edCalculo.getText().length() != 0) {
                             num2 = (Double.parseDouble(edCalculo.getText() + ""));
-                            tvResultado.setText(num1 % num2 + "");
-                            soma = false;
+                            res = num1 % num2;
+                            tvResultado.setText(num1 + " % " + num2  + " = " + (res));
+                            limparVariaveis();
                             break;
                         }
                 }
@@ -242,23 +242,18 @@ public class CalculadoraActivity extends AppCompatActivity {
         btLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                edCalculo.setText("");
-                tvResultado.setText("");
-                num1 = 0.0;
-                num2 = 0.0;
-                soma = false;
-                sub = false;
-                mult = false;
-                div = false;
-                resto = false;
+                limparVariaveis();
+                limparTexto();
             }
         });
 
+        //todo aparentemente a substring ta de brinks / arrumar essa bagaça depois
         btApagar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StringBuilder apagador = new StringBuilder();
-                apagador.deleteCharAt(edCalculo.getText().length() - 1);
+                edCalc = (edCalculo.getText() + "");
+                edCalc.substring(0, edCalc.length() - 1);
+                edCalculo.setText(edCalc + "");
             }
         });
 
@@ -273,5 +268,13 @@ public class CalculadoraActivity extends AppCompatActivity {
 //                }
 //            }
 //        });
+    }
+    public void limparVariaveis(){
+        num1 = 0.0;
+        num2 = 0.0;
+    }
+    public void limparTexto(){
+        edCalculo.setText("");
+        tvResultado.setText("");
     }
 }
