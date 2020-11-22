@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".NotepadActivity">
-
+    <!--TODO Limpar o código dos botões-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutTituloNota"
         android:layout_width="match_parent"
@@ -20,7 +21,7 @@
             android:id="@+id/editTituloNota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:textColor="#FFFFFF" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -46,14 +47,17 @@
 
     <Button
         android:id="@+id/btSalvar"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btSalvarNota"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginTop="30dp"
-        android:textSize="18sp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#8a05be"
+        android:text="@string/btSalvarNota"
         android:textAllCaps="false"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        />
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textSize="18sp"
+        app:iconTint="#FFFFFF" />
 </LinearLayout>

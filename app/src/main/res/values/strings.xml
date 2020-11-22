@@ -1,13 +1,16 @@
 <resources>
+    <!--String para nome das paginas-->
     <string name="app_name">IATechTools</string>
-    <string name="app_name_notepad">Notepad</string>
+    <string name="app_name_notepad">Bloco de Notas</string>
     <string name="app_name_calculadora">Calculadora</string>
-    <string name="app_name_todolist">ToDoList</string>
+    <string name="app_name_todolist">Lista de Afazeres</string>
 
+    <!--String para Menu Principal-->
     <string name="btNotepad">Bloco de Notas</string>
     <string name="btToDoList">Lista de Afazeres</string>
     <string name="btCalculadora">Calculadora</string>
 
+    <!--String para Notepad-->
     <string name="adicionarNota">Adicionar Nota</string>
     <string name="tituloNota">Título</string>
     <string name="textoNota">Descrição</string>
@@ -15,10 +18,12 @@
     <string name="data">Data criação: </string>
     <string name="excluir">Excluir essa nota?</string>
 
-    <string name="hintCampoTodo">Insira um ToDo</string>
+    <!--String para ToDoList-->
+    <string name="hintCampoTodo">Insira um ToDo</string> <!--todo alterar nome da variavel-->
     <string name="btAdicionarToDo">Adicionar à lista</string>
     <string name="btLimparListaToDo">Limpar a lista</string>
 
+    <!--String para Calculadora-->
     <string name="btNum1">1</string>
     <string name="btNum2">2</string>
     <string name="btNum3">3</string>
