@@ -22,7 +22,7 @@
         android:id="@+id/btAdicionarToDo"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:backgroundTint="#8a05be"
+        android:backgroundTint="#00FFFB"
         android:text="@string/btAdicionarToDo"
         android:textAllCaps="false"
         android:textColor="@color/white"
