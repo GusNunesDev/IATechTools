@@ -247,13 +247,17 @@ public class CalculadoraActivity extends AppCompatActivity {
             }
         });
 
-        //todo aparentemente a substring ta de brinks / arrumar essa bagaça depois
         btApagar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                edCalc = (edCalculo.getText() + "");
-                edCalc.substring(0, edCalc.length() - 1);
-                edCalculo.setText(edCalc + "");
+                int charLength;
+                    edCalc = edCalculo.getText().toString();
+                    charLength = edCalc.length();
+                    if(charLength > 0){
+                        edCalculo.setText(edCalc.substring(0, edCalc.length() - 1));
+                    }else{
+
+                    }
             }
         });
 
@@ -269,10 +273,12 @@ public class CalculadoraActivity extends AppCompatActivity {
 //            }
 //        });
     }
+
     public void limparVariaveis(){
         num1 = 0.0;
         num2 = 0.0;
     }
+
     public void limparTexto(){
         edCalculo.setText("");
         tvResultado.setText("");
