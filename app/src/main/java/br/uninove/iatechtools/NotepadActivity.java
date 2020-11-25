@@ -15,8 +15,8 @@ import java.util.Date;
 
 public class NotepadActivity extends AppCompatActivity {
 
-    ArrayList<Nota> listaNotas;
-    SQLiteDatabase db;
+    ArrayList<Nota> listaNotas;//Lista que armazenara as notas
+    SQLiteDatabase db;//Variável que faz a conexão com banco de dados
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class NotepadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notepad);
     }
 
+    //Função que faz o envio dos dados da nota para o banco de dados
     private void prepararLista() {
         listaNotas = new ArrayList<>();
 

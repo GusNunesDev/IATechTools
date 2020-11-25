@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class ToDoListActivity extends AppCompatActivity implements View.OnClickListener{
-
+    //Definição das variáveis locais
     EditText editToDo;
     Button btAdicionarToDo, btLimpaListaToDo;
     ListView listaToDo;
@@ -43,7 +43,7 @@ public class ToDoListActivity extends AppCompatActivity implements View.OnClickL
         btAdicionarToDo.setOnClickListener(this);
         btLimpaListaToDo.setOnClickListener(this);
 
-        //Função para apagar os itens dentro do listView, com long click
+        //Função para apagar os itens dentro do listView segurando o item da lista
         listaToDo.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View v, int pos, long id) {

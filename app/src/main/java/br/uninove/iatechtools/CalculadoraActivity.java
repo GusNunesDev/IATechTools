@@ -26,6 +26,7 @@ public class CalculadoraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculadora);
 
+        //Atribui às variáveis locais o valor dos botões
         btNum1 = findViewById(R.id.btNum1);
         btNum2 = findViewById(R.id.btNum2);
         btNum3 = findViewById(R.id.btNum3);
@@ -52,6 +53,7 @@ public class CalculadoraActivity extends AppCompatActivity {
         edCalculo = findViewById(R.id.edCalculo);
         tvResultado = findViewById(R.id.tvResultado);
 
+        //Listener que envia o input do botão para o edit Text edCalculo
         btNum1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,6 +132,7 @@ public class CalculadoraActivity extends AppCompatActivity {
         });
 
         //todo Criar array para armazenar os valores num1 e num2
+        //todo Toda vez que o botão de numero for apertado, somar os valores em uma na variável
         btSoma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -239,6 +242,7 @@ public class CalculadoraActivity extends AppCompatActivity {
             }
         });
 
+        //Limpa tudos os campo e as variáveis que armazenam os valores a serem calculados
         btLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -247,6 +251,7 @@ public class CalculadoraActivity extends AppCompatActivity {
             }
         });
 
+        //Botão que exclui 1 character da string dentro do editText edCalculo
         btApagar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -261,24 +266,28 @@ public class CalculadoraActivity extends AppCompatActivity {
             }
         });
 
-//        btPonto.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (deci) {
-//
-//                } else {
-//                    edCalculo.setText(edCalculo.getText() + ".");
-//                    deci = true;
-//                }
-//            }
-//        });
+        //Funcão para adicionar um ponto e calcular valor decimal
+        btPonto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edCalc = edCalculo.getText().toString();
+                if(edCalc.contains(".") == true) {
+
+                }else{
+                    edCalculo.setText(edCalculo.getText() + ".");
+                }
+            }
+        });
     }
 
+    //Função para limpeza de variáveis
     public void limparVariaveis(){
         num1 = 0.0;
         num2 = 0.0;
+        res = 0.0;
     }
 
+    //Função para limpeza do edCalculo e tvResultado
     public void limparTexto(){
         edCalculo.setText("");
         tvResultado.setText("");
