@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".NotepadActivity">
+
     <!--TODO Limpar o código dos botões-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutTituloNota"
@@ -56,7 +57,7 @@
         android:backgroundTint="#8000FFFB"
         android:text="@string/btSalvarNota"
         android:textAllCaps="false"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textColorHighlight="#FFFFFF"
         android:textSize="18sp"
         app:iconTint="#FFFFFF" />

@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Atribui os botões às variáveis locais
         btNotepad = findViewById(R.id.btNotepad);
         btNotepad.setOnClickListener(this);
         btToDoList = findViewById(R.id.btToDoList);
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btCalculadora.setOnClickListener(this);
     }
 
+    //Intent das telas do aplicativo, cria um menu para seleção de funções
     @Override
     public void onClick(View v) {
         switch(v.getId()){
