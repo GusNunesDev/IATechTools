@@ -1,7 +1,8 @@
 <resources>
     <!--String para nome das paginas-->
     <string name="app_name">IATechTools</string>
-    <string name="app_name_notepad">Bloco de Notas</string>
+    <string name="app_name_notalista">Bloco de Notas</string>
+    <string name="app_name_notacriacao">Crie sua nota</string>
     <string name="app_name_calculadora">Calculadora</string>
     <string name="app_name_todolist">Lista de Afazeres</string>
 

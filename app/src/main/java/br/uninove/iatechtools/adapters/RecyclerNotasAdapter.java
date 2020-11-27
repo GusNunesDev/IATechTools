@@ -19,7 +19,7 @@ public class RecyclerNotasAdapter extends RecyclerView.Adapter<RecyclerNotasAdap
     private ArrayList<Nota> listaNotas;
 
     public RecyclerNotasAdapter(Context context, ArrayList<Nota> listaNotas) {
-        this.context = context;r
+        this.context = context;
         this.listaNotas = listaNotas;
     }
 

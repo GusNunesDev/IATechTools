@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NotepadActivity">
+    tools:context=".NotacriacaoActivity">
 
     <!--TODO Limpar o código dos botões-->
     <com.google.android.material.textfield.TextInputLayout
@@ -47,7 +47,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btSalvar"
+        android:id="@+id/btSalvarNota"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,6 +55,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#8000FFFB"
+        android:onClick="btSalvarNota"
         android:text="@string/btSalvarNota"
         android:textAllCaps="false"
         android:textColor="#000000"

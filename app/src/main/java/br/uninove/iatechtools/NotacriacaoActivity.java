@@ -5,9 +5,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
-public class NotaActivity extends AppCompatActivity {
+public class NotacriacaoActivity extends AppCompatActivity {
 
     SQLiteDatabase db;
     EditText edTitulo, edTexto;
@@ -17,11 +18,11 @@ public class NotaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notepadcriacao);
 
-        edTitulo.findViewById(R.id.editTituloNota);
-        edTexto.findViewById(R.id.editTextNota);
+        edTitulo = findViewById(R.id.editTituloNota);
+        edTexto = findViewById(R.id.editTextNota);
     }
 
-    public void btSalvarNota(){
+    public void btSalvarNota(View v){
         ContentValues valores = new ContentValues();
         valores.put("Titulo", edTitulo.toString());
         valores.put("Texto", edTexto.toString());

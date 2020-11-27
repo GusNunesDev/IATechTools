@@ -16,7 +16,7 @@ import java.util.Date;
 import br.uninove.iatechtools.adapters.RecyclerNotasAdapter;
 import br.uninove.iatechtools.pojo.Nota;
 
-public class NotepadActivity extends AppCompatActivity {
+public class NotalistaActivity extends AppCompatActivity {
 
     ArrayList<Nota> listaNotas;
     SQLiteDatabase db;
@@ -25,10 +25,11 @@ public class NotepadActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notepadlista);
+        prepararLista();
     }
 
     public void fabNovaNotaClick(View v){
-        startActivity(new Intent(getApplicationContext(), NotaActivity.class));
+        startActivity(new Intent(getApplicationContext(), NotacriacaoActivity.class));
     }
 
     private void prepararLista() {

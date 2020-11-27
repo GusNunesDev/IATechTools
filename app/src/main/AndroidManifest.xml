@@ -18,7 +18,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NotepadActivity" android:label="@string/app_name_notepad">
+        <activity android:name=".NotalistaActivity" android:label="@string/app_name_notalista">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".NotacriacaoActivity" android:label="@string/app_name_notacriacao">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
