@@ -19,7 +19,7 @@
         android:layout_margin="16dp"
         android:contentDescription="@string/adicionarNota"
         android:onClick="fabNovaNotaClick"
-        app:backgroundTint="#B6B3B2"
+        app:backgroundTint="#00FFFB"
         app:srcCompat="@drawable/add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

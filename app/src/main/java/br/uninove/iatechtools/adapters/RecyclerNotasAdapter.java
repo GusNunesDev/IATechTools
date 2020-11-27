@@ -34,10 +34,6 @@ public class RecyclerNotasAdapter extends RecyclerView.Adapter<RecyclerNotasAdap
     @Override
     public void onBindViewHolder(@NonNull RecyclerNotasAdapter.ViewHolder holder, int position) {
         holder.tvTituloNota.setText(listaNotas.get(position).getTitulo());
-
-        String data = new SimpleDateFormat("dd/MM/yyyy").format(listaNotas.get(position).getDataCriacao().toString());
-
-        holder.tvDataNota.setText(data);
     }
 
     @Override
@@ -47,14 +43,13 @@ public class RecyclerNotasAdapter extends RecyclerView.Adapter<RecyclerNotasAdap
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvTituloNota, tvDataNota;
+        TextView tvTituloNota;
         ConstraintLayout layout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvTituloNota = itemView.findViewById(R.id.tvTituloNota);
-            tvDataNota = itemView.findViewById(R.id.tvDataNota);
             layout = itemView.findViewById(R.id.layout_parent);
         }
     }

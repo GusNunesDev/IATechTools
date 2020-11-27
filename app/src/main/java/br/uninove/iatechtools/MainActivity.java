@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch(v.getId()){
 
             case R.id.btNotepad:
-                Intent telaNotepad = new Intent(MainActivity.this, NotepadActivity.class);
+                Intent telaNotepad = new Intent(MainActivity.this, NotalistaActivity.class);
                 startActivity(telaNotepad);
                 break;
 

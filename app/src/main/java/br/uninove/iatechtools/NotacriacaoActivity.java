@@ -6,12 +6,14 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class NotacriacaoActivity extends AppCompatActivity {
 
     SQLiteDatabase db;
     EditText edTitulo, edTexto;
+    Button btSalvarNota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +22,17 @@ public class NotacriacaoActivity extends AppCompatActivity {
 
         edTitulo = findViewById(R.id.editTituloNota);
         edTexto = findViewById(R.id.editTextNota);
-    }
+        btSalvarNota = findViewById(R.id.btSalvarNota);
 
-    public void btSalvarNota(View v){
-        ContentValues valores = new ContentValues();
-        valores.put("Titulo", edTitulo.toString());
-        valores.put("Texto", edTexto.toString());
-        db = openOrCreateDatabase("db_notas", Context.MODE_PRIVATE, null);
-        db.insert("notas", null, valores);
+        btSalvarNota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContentValues valores = new ContentValues();
+                valores.put("Titulo", edTitulo.toString());
+                valores.put("Texto", edTexto.toString());
+                db = openOrCreateDatabase("db_notas", Context.MODE_PRIVATE, null);
+                db.insert("notas", null, valores);
+            }
+        });
     }
 }
