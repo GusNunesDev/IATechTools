@@ -18,6 +18,7 @@
     <string name="btSalvarNota">Salvar</string>
     <string name="data">Data criação: </string>
     <string name="excluir">Excluir essa nota?</string>
+    <string name="btDeletarNota">Deletar</string>
 
     <!--String para ToDoList-->
     <string name="hintCampoTodo">Insira um ToDo</string> <!--todo alterar nome da variavel-->
