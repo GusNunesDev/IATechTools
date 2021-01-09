@@ -60,7 +60,7 @@ Demonstrativo do wireframe do aplicativo, foi utilizado o site cacoo.com.
 <img src="https://github.com/GusNunesDev/IATechTools/blob/master/source/image/criaanotacaoapp.jpg" alt="Criação de Anotação" heigth="300" width="300">
 <img src="https://github.com/GusNunesDev/IATechTools/blob/master/source/image/todolistapp.jpg" alt="Lista de Afazeres" heigth="300" width="300">
 <img src="https://github.com/GusNunesDev/IATechTools/blob/master/source/image/calculadoraapp1.jpg" alt="Calculadora" heigth="300" width="300">
-<img src="https://github.com/GusNunesDev/IATechTools/blob/master/source/image/tabelabancoanotacao.jpg" alt="Banco de Dados" heigth="300" width="300">
+<img src="https://github.com/GusNunesDev/IATechTools/blob/master/source/image/tabelabancoanotacao.png" alt="Banco de Dados" heigth="300" width="300">
 </div>
 
 Fotos do aplicativo em funcionamento.
